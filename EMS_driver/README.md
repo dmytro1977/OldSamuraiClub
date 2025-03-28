@@ -1,0 +1,20 @@
+# Hacked EMS + RAMDISK driver for ISA EMS 4MB card
+- Used for [this EMS card](https://github.com/hkzlab/ISA_EMS_4Mb) or Low Tech 2MB EMS card..
+- Sorry, link for the author of EMS driver will be added soon...
+- Thanks to Microsoft (tm) for RAM disk driver
+- Goal: to get an memory virtual drive which survives after hard reset
+  - Shortcomings:
+    - EMS memory test skipped
+    - RAM disk avoids some checks
+  - Good sides: data on RAM disk survive after
+    - three magic buttonS Ctrl-Alt-Del
+    - hardware reset
+  - allow you to operate fast enough while assembling/compiling source files
+- Includes:
+  - LTEMMxxx.EXE - driver for 512KB/1MB/2MB/4MB EMS cards
+  - RAMDRIVE.SYS - RAM disk driver from Microsoft
+  - EMSTEST.COM, MOVETEST.COM, EMMSTAT.EXE - some files to check EMS driver, author's names are renders during these program runs
+  - CONFYG.SYS - example config files: provides 2MB RAM drive at 4MB EMS card, working configuration for Nuxt 2.0 XT machine
+- Tested on
+  - Nuxt 2.0 XT with 4MB card
+  - 286AT machine with 2MB low-tech EMS card
