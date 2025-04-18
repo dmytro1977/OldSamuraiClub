@@ -9,3 +9,4 @@ Ukrainian 8/16-bit computer hardware club "Old Samurai"
 - test_87: reengineered version of 8087 coprocessor tests\
   extended for 8087/287/287XL/387 support\
   tested on real 8087 NPU
+- mdatest1: test display memory for dual mono/color display configuration
