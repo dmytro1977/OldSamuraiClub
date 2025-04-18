@@ -1,13 +1,13 @@
 # Video adapter memory test
 Tests 32KB memory segment starting from B000:0 or B800:0. The test is recommended for 2 monitor configuration:
 - MDA/Hercules + CGA
-- MDA/Hercules + VGA
-The user can test video memory of some adapter and see the result on another.
-The program renders current tested address for byte-by-byte test and address test
-In case of an error, the test is stopped, the following information is printed:
-- **AAAA** **BB CC**
-where **AAAA** is the address, **BB** is the written byte, **CC** is the read byte
-Pressing any key continues the test
+- MDA/Hercules + VGA\
+The user can test video memory of some adapter and see the result on another.\
+The program renders current tested address for byte-by-byte test and address test\
+In case of an error, the test is stopped, the following information is printed:\
+- **AAAA** **BB CC**\
+where **AAAA** is the address, **BB** is the written byte, **CC** is the read byte\
+Pressing any key continues the test\
 Pressing **q** key stops the test
 ## Some details
 - The test includes byte-by-byte test and address tests
