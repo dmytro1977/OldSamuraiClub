@@ -5,7 +5,7 @@ Tests 32KB memory segment starting from B000:0 or B800:0. The test is recommende
 The user can test video memory of some adapter and see the result on another.
 The program renders current tested address for byte-by-byte test and address test
 In case of an error, the test is stopped, the following information is printed:
-- <AAAA> <BB><CC>
+- **AAAA** **BB CC**
 where **AAAA** is the address, **BB** is the written byte, **CC** is the read byte
 Pressing any key continues the test
 Pressing **q** key stops the test
@@ -25,6 +25,6 @@ where:
 - E: 0|1 0 for passing byte-by-byte test
 Default values: 08101
 ## Comments, how to use
-mdatest1 **08101** make all tests on mono adapter, display on color
-mdatest1 **80211** make all tests on color adapter, display on mono, step is 2 bytes, offset is 1, so it tests attributes only
+mdatest1 **08101** make all tests on mono adapter, display on color\
+mdatest1 **80211** make all tests on color adapter, display on mono, step is 2 bytes, offset is 1, so it tests attributes only\
 etc
