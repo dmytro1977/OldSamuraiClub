@@ -5,8 +5,8 @@ Tests 32KB memory segment starting from B000:0 or B800:0. The test is recommende
 The user can test video memory of some adapter and see the result on another.\
 The program renders current tested address for byte-by-byte test and address test\
 In case of an error, the test is stopped, the following information is printed:\
-- **AAAA** **BB CC**\
-where **AAAA** is the address, **BB** is the written byte, **CC** is the read byte\
+- **AAAA** **BBCC** **DD**\
+where **AAAA** is the address, **BB** is the written byte, **CC** is the read byte, **DD** the difference\
 Pressing any key continues the test\
 Pressing **q** key stops the test
 ## Some details

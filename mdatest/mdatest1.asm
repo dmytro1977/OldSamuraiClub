@@ -24,25 +24,14 @@ COMY	PROC
 
 	mov	dx,32*1024
 @@:	mov	ax,si
-	mov	al,ah
+	mov	al,ah ; high byte of SI
 	push	di
 	call	store_screen
 	mov	ax,si
-	call	store_screen
-	;pop	di
-
+	call	store_screen ; low byte
 	call	mem_check
 	jz	no_prn_err
-	push	ax
-	inc	di
-	inc	di
-	call	store_screen
-	pop	ax
-	mov	al,ah
-	call	store_screen
-	mov	ah,0
-	int	16h
-	cmp	al,'q'
+	call	prn_err
 	jz	texit
 no_prn_err: 	pop	di
 	add	si, cs:inc_mem
@@ -77,17 +66,7 @@ addr_test:
 	cmp	ah,bl
 	jz	addr_ok
 	mov	al,bl
-	push	ax
-	inc	di
-	inc	di
-	call	store_screen
-	pop	ax
-	mov	al,ah
-	call	store_screen
-
-	mov	ah,0
-	int	16h
-	cmp	al,'q'
+	call	prn_err
 	je	texit
 addr_ok:pop	di
 	add	si,cs:inc_mem
@@ -100,6 +79,26 @@ texit:
 	int	20h
 
 COMY	ENDP
+
+prn_err	proc
+	push	ax
+	push	ax
+	inc	di ; position change
+	inc	di
+	call	store_screen ; one value
+	pop	ax
+	mov	al,ah
+	call	store_screen ; another value
+	inc	di ; +col
+	inc	di
+	pop	ax
+	xor	al,ah
+	call	store_screen
+	mov	ah,0
+	int	16h
+	cmp	al,'q'
+	ret
+prn_err	endp
 
 end_mem	proc
 	push	di
@@ -163,11 +162,10 @@ get_opts	proc
 @@:	mov	maintest,ax
 	ret
 get_opts	endp
-
-; ES:DI = screen address
+; render AL as 2 hex digits at address
+; ES:DI = screen address, is propagated
 ; AL = number
 store_screen	proc
-;	push	di
 	mov	ah,SCD_ATTR
 	push	ax
 	mov	cl,4
@@ -184,7 +182,6 @@ store_screen	proc
 	adc	al,40h
 	daa
 	stosw
-;	pop	di
 	ret
 store_screen	endp
 
