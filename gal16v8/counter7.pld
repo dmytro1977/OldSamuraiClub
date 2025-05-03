@@ -1,0 +1,53 @@
+GAL16V8
+COUNTER7
+
+CLK I0 I1 I2 I3 I4 I5 I6 LD GND
+OE  Q0 Q1 Q2 Q3 Q4 Q5 Q6 CF VCC
+
+Q0.R  = /LD * I0 +
+    /Q0 * LD
+
+Q1.R  = /LD * I1 +
+    /Q0 * Q1 * LD
+  + Q0 * /Q1 * LD
+
+Q2.R  = /LD * I2 +
+    /Q0 * Q1 * Q2 * LD
+  + Q0 * Q1 * /Q2 * LD
+  + /Q1 * Q2 * LD
+
+Q3.R  = /LD * I3 +
+    /Q0 * Q1 * Q2 * Q3 * LD
+  + Q0 * Q1 * Q2 * /Q3 * LD
+  + /Q1 * Q2 * Q3 * LD
+  + /Q2 * Q3 * LD
+
+Q4.R  = /LD * I4 +
+    /Q0 * Q1 * Q2 * Q3 * Q4 * LD
+  + Q0 * Q1 * Q2 * Q3 * /Q4 * LD
+  + Q1 * Q2 * /Q3 * Q4 * LD
+  + /Q2 * Q4 * LD
+  + /Q1 * Q2 * Q4 * LD
+
+Q5.R  = /LD * I5 +
+    /Q0 * Q1 * Q2 * Q3 * Q4 * Q5 * LD
+  + Q0 * Q1 * Q2 * Q3 * Q4 * /Q5 * LD
+  + Q1 * Q2 * Q3 * /Q4 * Q5 * LD
+  + /Q3 * Q5 * LD
+  + Q1 * /Q2 * Q3 * Q5 * LD
+  + /Q1 * Q3 * Q5 * LD
+
+Q6.R  =  /LD * I6 +
+    /Q0 * Q1 * Q2 * Q3 * Q4 * Q5 * Q6 * LD
+  + Q0 * Q1 * Q2 * Q3 * Q4 * Q5 * /Q6 * LD
+  + Q1 * Q2 * Q3 * Q4 * /Q5 * Q6 * LD
+  + /Q2 * Q3 * Q6 * LD
+  + /Q3 * Q6 * LD
+  + Q1 * Q2 * Q3 * /Q4 * Q6 * LD
+  + /Q1 * Q2 * Q3 * Q6 * LD
+
+CF.R  = LD * Q0 * Q1 * Q2 * Q3 * Q4 * Q5 * Q6
+
+DESCRIPTION
+
+7 bit counter with set functionality

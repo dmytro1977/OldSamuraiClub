@@ -1,0 +1,21 @@
+
+G16V8MS registered    |  1 and 11 permanent CLK & output enable
+                      |  2-9 inputs, 12-19 outputs, all outputs connected to inputs
+G16V8MA complex       |  1 and 11 inputs, feedback of 19 and 12
+                      |  pin 1  instead pin 19 FB
+                      |  pin 11 instead pin 12 FB
+G16V8AS simple        |  1 and 11 inputs, feedbacks from 19,18,17 and 14,13,12
+G16V8A  auto select
+
+|1* |    |
+|2  | 19 |
+|3  | 18 |
+|4  | 17 |
+|5  | 16 |
+|6  | 15 |
+|7  | 14 |
+|8  | 13 |
+|9  | 12 |
+|   | 11*|
+
+                         
