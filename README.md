@@ -11,5 +11,6 @@ Ukrainian 8/16-bit computer hardware club "Old Samurai"
   tested on real 8087 NPU
 - mdatest1: test display memory for dual mono/color display configuration
 - gal16v8: implementation of 7-bit counter for GAL16V8
+- xtide: simple program to access IDE drive via IDE-XT ports
 ## About us
 ![OldSamuraiClub logo](kamikadze.jpeg?raw=true "OldSamuraiClub")
