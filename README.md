@@ -1,5 +1,5 @@
 # OldSamuraiClub
-Ukrainian 8/16-bit computer hardware club "Old Samurai"
+Ukrainian 8/16-bit computer hardware club "[Old Samurai](#about-us)"
 ## 8088/8086/NEC V20/286/386 platform
 ### Contents
 - [ROM-based debugger](ROM_based_debugger/README.md) (as 32KB ROM BIOS extension)
